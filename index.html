@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Analytics Mini Project</title>
 
-  <!-- Google Tag Manager (înlocuiește GTM-XXXXXXX cu ID-ul tău la Pasul 2) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+  </script>
+
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-N85D44F9');</script>
-  <!-- End Google Tag Manager -->
 
   <style>
     body { font-family: system-ui, sans-serif; max-width: 600px; margin: 40px auto; padding: 0 20px; line-height: 1.5; }
@@ -23,23 +25,19 @@
   </style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N85D44F9"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
   <h1>Demo Tracking Page</h1>
   <p>Pagină de test pentru fluxul complet: GTM &rarr; GA4 &rarr; Looker Studio.</p>
 
   <hr />
 
-  <!-- 1. Eveniment de Click (CTA) -->
   <section>
     <h3>1. Acțiune Button Click</h3>
     <button id="cta-button" type="button">Apasă pentru Demo CTA</button>
   </section>
 
-  <!-- 2. Eveniment Formular -->
   <section>
     <h3>2. Formular de Contact / Lead</h3>
     <form id="lead-form">
@@ -57,7 +55,6 @@
   <script>
     window.dataLayer = window.dataLayer || [];
 
-    // Tracking Button Click
     document.getElementById('cta-button').addEventListener('click', function() {
       window.dataLayer.push({
         event: 'custom_button_click',
@@ -67,7 +64,6 @@
       alert('Event "custom_button_click" trimis în dataLayer!');
     });
 
-    // Tracking Form Submit
     document.getElementById('lead-form').addEventListener('submit', function(e) {
       e.preventDefault();
 
